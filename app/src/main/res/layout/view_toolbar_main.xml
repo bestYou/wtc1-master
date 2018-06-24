@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar_main"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    tools:showIn="@layout/activity_main">
+
+    <RelativeLayout
+        android:layout_width="280dp"
+        android:layout_height="50dp"
+        >
+
+        <ImageView
+            android:id="@+id/go_map_trans"
+            android:layout_width="20dp"
+            android:layout_height= "50dp"
+            android:src="@mipmap/adventure"
+            android:clickable="true"
+            android:onClick="showMainTop"
+            android:tag="startbtn"
+            tools:ignore="OnClick" />
+
+        <TextView
+            android:id="@+id/guanqia"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="13dp"
+            android:textSize="15dp"
+            android:textColor="@color/activity_toptab_foot_color"
+            android:text="关卡：摇光"/>
+
+    </RelativeLayout>
+    <!--
+
+            <TextView
+            android:id="@+id/tvCenter"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="居中TextView"/>
+
+        <ImageView
+            android:id="@+id/go_map_trans"
+            android:layout_width="200dp"
+            android:layout_height= "?actionBarSize"
+            android:src="@drawable/iv_map_trans"
+            android:clickable="true"
+            android:onClick="showMap"
+            android:tag="startbtn"
+            tools:ignore="OnClick" />
+
+
+    -->
+
+
+
+
+
+
+</android.support.v7.widget.Toolbar>

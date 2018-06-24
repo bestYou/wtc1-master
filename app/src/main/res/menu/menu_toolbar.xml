@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools">
+    <item
+        android:id="@+id/actionMe"
+        android:icon="@mipmap/ic_account_circle_white_24dp"
+        android:orderInCategory="30"
+        android:title="我"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/actionDownload"
+        android:icon="@mipmap/ic_file_download_white_24dp"
+        android:orderInCategory="40"
+        android:title="下载"
+        app:showAsAction="ifRoom"/>
+
+</menu>

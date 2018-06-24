@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.bestyou.wtc1">
+
+    <!-- 允许程序打开网络套接字 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 允许程序设置内置sd卡的写权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 允许程序获取网络状态 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 允许程序访问WiFi网络信息 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 允许程序读写手机状态和身份 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!--
+     用于访问GPS定位
+     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    -->
+    <!-- 用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- 用于读取手机当前的状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 用于申请调用A-GPS模块 -->
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+
+    <!-- 计歩 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+    <uses-feature android:name="android.hardware.sensor.accelerometer" />
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+
+    <uses-feature
+        android:name="android.hardware.sensor.stepcounter"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.sensor.stepdetector"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <!-- 蓝牙分享所需的权限 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <!-- 蒲公英SDK必选-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 获取网络状态 -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 网络通信-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />  <!-- 获取设备信息 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- 获取MAC地址-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 读写sdcard，storage等等 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" /> <!-- 允许程序录制音频 -->
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <!-- 可选-->
+    <uses-permission android:name="android.permission.READ_LOGS" /> <!-- 获取logcat日志 -->
+
+    <!-- word-->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
+    <application
+        android:name="com.mob.MobApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="com.hr.nipuream.luckpan.MainActivity"
+            android:theme="@style/AppTheme_design" />
+        <activity
+            android:name=".SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ThemeSplash">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+        <activity android:name=".GuideActivity" />
+
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="76dc23a717d06f0c9c58fbac5a61b89f" />
+
+        <activity android:name=".MapActivity" />
+        <activity
+            android:name="com.bestyou.timeline3.MainActivity"
+            android:theme="@style/AppTheme_design" />
+        <activity android:name="com.bestyou.timeline3.Edison">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.ltb.laer.waterview.MainActivity" />
+        <activity android:name="com.bestyou.tuling.MainActivity">        </activity>>
+
+        <!-- DylanStep记步模块 -->
+        <activity
+            android:name="cn.bluemobi.dylan.step.activity.MainActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name="cn.bluemobi.dylan.step.activity.SetPlanActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="cn.bluemobi.dylan.step.activity.HistoryActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <service
+            android:name="cn.bluemobi.dylan.step.step.service.StepService"
+            android:priority="1000">
+            <intent-filter>
+
+                <!-- 系统启动完成后会调用 -->
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.DATE_CHANGED" />
+                <action android:name="android.intent.action.MEDIA_MOUNTED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.intent.action.ACTION_TIME_TICK" />
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="cn.bluemobi.dylan.step.pedometer.StepsDetectService"
+            android:priority="1000"
+            android:process="cn.bluemobi.dylan.step..pedometer.StepsDetectService">
+            <intent-filter>
+
+                <!-- 系统启动完成后会调用 -->
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.DATE_CHANGED" />
+                <action android:name="android.intent.action.MEDIA_MOUNTED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.intent.action.ACTION_TIME_TICK" />
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+            </intent-filter>
+        </service>
+
+        <activity android:name="com.bestyou.gaode.MainActivity" />
+
+        <!-- ShareSDK的activity -->
+        <activity
+            android:name="com.mob.tools.MobUIShell"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+            <intent-filter>
+                <data android:scheme="tencent100371282" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <!-- 调用新浪原生SDK，需要注册的回调activity -->
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <!-- 集成line客户端登录授权，需要添如下格式的过滤器 -->
+            <intent-filter>
+                <data android:scheme="line.1477692153" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!-- 填写您从Mob开发者后台中得到的Appkey和AppSecret -->
+        <meta-data
+            android:name="Mob-AppKey"
+            android:value="2608213c71fd7" />
+        <meta-data
+            android:name="Mob-AppSecret"
+            android:value="66b9163dca13a0f40983c1d66cae6781 " />
+
+        <!-- 微信分享回调 -->
+        <activity
+            android:name=".WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity android:name=".ShareActivity" />
+        <activity android:name=".FankuiActivity"></activity>
+
+        <!-- 蒲公英Key 必选-->
+        <meta-data
+            android:name="PGYER_APPID"
+            android:value="b5235486025f2de7897e1a368794292f" >
+        </meta-data>
+        <!-- 可选-->
+        <activity android:name="com.pgyersdk.activity.FeedbackActivity"/>
+
+        <!-- 设置您在百度移动统计网站上添加的APP的AppKey -->
+        <meta-data
+            android:name="BaiduMobAd_STAT_ID"
+            android:value="9c8690cd1c" >
+        </meta-data>
+
+        <!-- word-->
+        <activity
+            android:name="com.bestyou.word.activity.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        </activity>
+        <activity
+            android:name="com.bestyou.word.activity.UnitListActivity"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+        <activity
+            android:name="com.bestyou.word.activity.WordListActivity"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+        <activity
+            android:name="com.bestyou.word.activity.DetailActivity"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+
+
+
+
+
+    </application>
+
+</manifest>
